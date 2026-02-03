@@ -1,51 +1,130 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Depósito Agibank – Liberação imediata</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-  body{background:#f2f2f2;font-family:Arial,Helvetica,sans-serif;margin:0;padding:2rem}
-  .box{max-width:520px;margin:auto;background:#fff;padding:2rem;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,.15)}
-  h1{color:#d52b1e;text-align:center;margin-bottom:1rem}
-  .destaque{background:#fff3cd;border-left:5px solid #ffc107;padding:1rem;margin:1rem 0;font-weight:700}
-  .info{background:#e7f3ff;border-left:5px solid #0066cc;padding:1rem;margin:.8rem 0}
-  .valor{font-size:1.4rem;color:#28a745}
-  .btn{display:block;background:#d52b1e;color:#fff;text-align:center;padding:1rem;font-size:1.1rem;border-radius:6px;text-decoration:none;margin-top:1.5rem}
-  .small{font-size:.75rem;color:#555}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comprovante de Depósito - Agibank</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8FAFC;
+        }
+        .ticket-shadow {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+        }
+        .gradient-brand {
+            background: linear-gradient(135deg, #d52b1e 0%, #a11f16 100%);
+        }
+        @media print {
+            .no-print { display: none; }
+            body { background: white; padding: 0; }
+            .ticket-shadow { box-shadow: none; border: 1px solid #e2e8f0; }
+        }
+    </style>
 </head>
-<body>
+<body class="p-4 md:p-8">
 
-<div class="box">
-  <h1>✅ Depósito Agibank Confirmado</h1>
+    <div class="max-w-md mx-auto bg-white rounded-3xl overflow-hidden ticket-shadow">
+        <!-- Header -->
+        <div class="gradient-brand p-6 text-white text-center">
+            <div class="flex justify-center mb-4">
+                <!-- Mockup Logo Agibank (SVG) -->
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="20" cy="20" r="20" fill="white" fill-opacity="0.2"/>
+                    <path d="M20 10L28 26H12L20 10Z" fill="white"/>
+                </svg>
+            </div>
+            <h1 class="text-xl font-bold tracking-tight">Comprovante de Depósito</h1>
+            <p class="text-sm opacity-80 mt-1">Transação realizada com sucesso</p>
+            <p class="text-sm opacity-80 mt-1">DEPOSITO SO FUNCIONA SE ESTIVER COM NOSSO APP INSTALADO NAO DESITALE ATE DIA 04/02</p>
+        </div>
 
-  <p class="destaque">
-    💸 <strong>Amanhã cai R$ 6.000,00</strong> na conta abaixo <br>
-    <em>só manter o app Agibank instalado e ativo!</em>
-  </p>
+        <!-- Main Info -->
+        <div class="p-6">
+            <div class="text-center mb-8">
+                <span class="text-gray-500 text-sm uppercase tracking-widest font-semibold">Valor do Lançamento</span>
+                <div class="text-4xl font-bold text-slate-800 mt-1">R$ 6.000,00</div>
+                <div class="mt-2 inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
+                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                    LIBERAÇÃO AGENDADA
+                </div>
+            </div>
 
-  <div class="info">
-    <strong>Pagador:</strong> INSS – Portabilidade Salário<br>
-    <strong>Banco origem:</strong> Agibank<br>
-    <strong>Valor:</strong> <span class="valor">R$ 6.000,00</span><br>
-    <strong>Data efetiva:</strong> amanhã após 08h
-  </div>
+            <!-- Details Section -->
+            <div class="space-y-4">
+                <div class="border-b border-gray-100 pb-3">
+                    <label class="text-xs text-gray-400 uppercase font-bold tracking-wider">Origem do Recurso</label>
+                    <div class="flex justify-between mt-1">
+                        <span class="text-sm font-semibold text-slate-700">INSS – Portabilidade Salário</span>
+                        <span class="text-xs text-gray-500">Convênio 0884</span>
+                    </div>
+                </div>
 
-  <div class="info">
-    <strong>Recebedora:</strong> Vanosa Lopes dos Santos<br>
-    <strong>CPF:</strong> 005.856.312-12<br>
-    <strong>Conta Agibank:</strong> 111516340<br>
-    <strong>Tipo:</strong> Conta-corrente
-  </div>
+                <div class="border-b border-gray-100 pb-3">
+                    <label class="text-xs text-gray-400 uppercase font-bold tracking-wider">Conta Destino</label>
+                    <div class="mt-1">
+                        <div class="text-sm font-semibold text-slate-700">Vanosa Lopes dos Santos</div>
+                        <div class="text-xs text-gray-500">CPF: ***.856.***-12</div>
+                        <div class="text-xs text-gray-500 mt-1">Agência: 0001 • Conta: 11151634-0</div>
+                    </div>
+                </div>
 
-  <p class="small">
-    ✅ Saldo já disponível para Pix, transferência ou saque em lotérica/Banco24H.<br>
-    ✅ Sem tarifas para movimentação até o 5º saque mensal.
-  </p>
+                <div class="border-b border-gray-100 pb-3">
+                    <label class="text-xs text-gray-400 uppercase font-bold tracking-wider">Data da Operação</label>
+                    <div class="flex justify-between mt-1 text-sm font-semibold text-slate-700">
+                        <span>Efetivação:</span>
+                        <span id="data-atual">Amanhã, após 08h00</span>
+                    </div>
+                </div>
 
-  <a class="btn" href="https://agibank.com.br/appdoagi" target="_blank">Baixar / Abrir App Agibank</a>
-</div>
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 pt-1">
+                            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-xs leading-relaxed text-slate-600">
+                                <strong>Atenção:</strong> O saldo ficará disponível para movimentação imediata (Pix e saques) assim que processado pelo sistema central. Mantenha seu aplicativo atualizado para receber a notificação de crédito.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Actions -->
+            <div class="mt-8 space-y-3 no-print">
+                <button onclick="window.print()" class="w-full flex items-center justify-center gap-2 bg-slate-800 text-white py-3.5 rounded-xl font-semibold hover:bg-slate-900 transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path></svg>
+                    Salvar ou Imprimir
+                </button>
+                <a href="https://agibank.com.br/appdoagi" class="w-full flex items-center justify-center border-2 border-slate-200 text-slate-700 py-3.5 rounded-xl font-semibold hover:bg-gray-50 transition-colors">
+                    Ir para o App Agibank
+                </a>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-gray-50 p-6 border-t border-gray-100 text-center">
+            <div class="text-[10px] text-gray-400 uppercase tracking-widest font-bold mb-2">Autenticação Eletrônica</div>
+            <div class="text-[9px] font-mono text-gray-400 break-all leading-tight">
+                AGB-99823-X92-00123-PORT-2023-VLS-PROD-SECURE
+            </div>
+            <p class="text-[10px] text-gray-400 mt-4 leading-relaxed">
+                Agibank Financeira S.A. - CNPJ 10.664.513/0001-33<br>
+                Este documento serve como registro de agendamento de crédito em conta.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Pequeno ajuste para exibir a data de amanhã dinamicamente se desejar
+        const hoje = new Date();
+        const amanha = new Date(hoje);
+        amanha.setDate(hoje.getDate() + 1);
+        const options = { day: '2-digit', month: '2-digit', year: 'numeric' };
+        // document.getElementById('data-atual').innerText = amanha.toLocaleDateString('pt-BR', options) + ' às 08h00';
+    </script>
 </body>
 </html>
